@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cc.glow">
+
+    <application
+        android:name=".common.GlowApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Glow">
+        <activity
+            android:name=".feature.splash.presentation.SplashLaunchActivity"
+            android:exported="true"
+            android:theme="@style/SplashLauncher" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".feature.auth.presentation.AuthActivity"
+            android:exported="true"
+            android:theme="@style/TransTheme"
+            />
+        <activity
+            android:name=".feature.common.BottomNavActivity"
+            android:exported="true"/>
+    </application>
+
+</manifest>

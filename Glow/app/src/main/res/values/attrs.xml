@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="GlowStepView">
+        <attr name="stepView_title" format="string" />
+        <attr name="stepView_message" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="GlowEditText">
+        <attr name="get_label" format="string" />
+        <attr name="android:inputType"/>
+    </declare-styleable>
+
+</resources>

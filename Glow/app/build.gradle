@@ -1,0 +1,115 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+apply from: '../deps.gradle'
+def keyStorePropertiesFile = rootProject.file("keystore.properties")
+def keyStoreProperties = new Properties()
+keyStoreProperties.load(new FileInputStream(keyStorePropertiesFile))
+def versionPropsFile = file('../version.properties')
+
+android {
+    compileSdk versions.compileSdk
+    if (versionPropsFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        defaultConfig {
+            applicationId "com.cc.glow"
+            minSdkVersion versions.minSdk
+            targetSdkVersion versions.compileSdk
+            versionName versionProps['VERSION_NAME']
+            versionCode versionProps['VERSION_CODE'].toInteger()
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            signingConfig signingConfigs.debug
+        }
+    } else {
+        throw new FileNotFoundException("Could not read version.properties!")
+    }
+    signingConfigs {
+        release{
+            keyAlias keyStoreProperties['releaseKeyAlias']
+            keyPassword = keyStoreProperties['releaseKeyPassword']
+            storeFile rootProject.file(keyStoreProperties['releaseKeyStore'])
+            storePassword keyStoreProperties['releaseKeyStorePassword']
+        }
+        debug {
+            keyAlias keyStoreProperties['debugKeyAlias']
+            keyPassword = keyStoreProperties['debugKeyPassword']
+            storeFile rootProject.file(keyStoreProperties['debugKeyStore'])
+            storePassword keyStoreProperties['debugKeyStorePassword']
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "glow.${variant.name}-${variant.versionName}.apk"
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    flavorDimensions "dev, prod"
+    productFlavors {
+        dev {
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "Glow DEV"
+            buildConfigField "String", "BASE_URL", "\"" + getDevBaseUrl() + "\""
+        }
+        prod {
+            resValue "string", "app_name", "Glow"
+            buildConfigField "String", "BASE_URL", "\"" + getProdBaseUrl() + "\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+static def getDevBaseUrl() {
+    Properties props = new Properties()
+    props.load(new FileInputStream(new File('secret.properties')))
+    return props['DEV_BASE_URL']
+}
+
+static def getProdBaseUrl() {
+    Properties props = new Properties()
+    props.load(new FileInputStream(new File('secret.properties')))
+    return props['PROD_BASE_URL']
+}
+
+dependencies {
+    testImplementation testLibraries
+    androidTestImplementation androidTestLibraries
+    implementation base
+    implementation view
+    implementation networking
+    implementation lifecycleArch
+    implementation coroutines
+    implementation navigation
+    implementation imageLoaders
+    annotationProcessor glideCompiler
+    implementation koin
+    implementation moshi
+    kapt moshiKapt
+}

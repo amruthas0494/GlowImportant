@@ -1,0 +1,14 @@
+/* 
+  Home.strings
+  Glow
+
+  Created by apple on 02/03/22.
+  Copyright © 2022 CC. All rights reserved.
+*/
+"Hi" =  "Hi";
+"Good to see you’re back at it." =  "Good to see you’re back at it.";
+"Ask a question?" = "Ask a question?";
+"Unblock all your confusions with Glow" = "Unblock all your confusions with Glow";
+//"Home" = "Home";
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "dgZ-Xa-Fi3"; */
+"dgZ-Xa-Fi3.title" = "Home";

@@ -1,0 +1,28 @@
+
+///* Class = "UILabel"; text = "Label"; ObjectID = "KrA-i5-nh7"; */
+//"KrA-i5-nh7.text" = "Unblock all your confusions with Glow";
+//
+///* Class = "UILabel"; text = "Hi"; ObjectID = "ZkQ-Ey-gJn"; */
+//"ZkQ-Ey-gJn.text" = "Hi";
+//
+///* Class = "UILabel"; text = "Ask a Question?"; ObjectID = "abP-5y-rs2"; */
+//"abP-5y-rs2.text" = "Ask a question?";
+//
+///* Class = "UITabBarItem"; title = "Home"; ObjectID = "dgZ-Xa-Fi3"; */
+//"dgZ-Xa-Fi3.title" = "Home";
+//
+///* Class = "UILabel"; text = "Good to see you’re back at it"; ObjectID = "ffb-gk-Icd"; */
+//"ffb-gk-Icd.text" = "Good to see you’re back at it";
+//
+///* Class = "UITabBarItem"; title = "Item"; ObjectID = "n0p-TM-3NM"; */
+//"n0p-TM-3NM.title" = "Item";
+//
+///* Class = "UIButton"; normalTitle = "Button"; ObjectID = "v34-7s-jtc"; */
+//"v34-7s-jtc.normalTitle" = "Button";
+"Hi" =  "Hi";
+"Good to see you’re back at it." =  "Good to see you’re back at it.";
+"Ask a question?" = "Ask a question?";
+"Unblock all your confusions with Glow" = "Unblock all your confusions with Glow";
+//"Home" = "Home";
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "dgZ-Xa-Fi3"; */
+"dgZ-Xa-Fi3.title" = "Home";

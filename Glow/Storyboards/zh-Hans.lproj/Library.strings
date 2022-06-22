@@ -1,0 +1,19 @@
+//
+///* Class = "UISegmentedControl"; VX5-Yx-dmD.segmentTitles[0] = "Education"; ObjectID = "VX5-Yx-dmD"; */
+//"VX5-Yx-dmD.segmentTitles[0]" = "教育";
+//
+///* Class = "UISegmentedControl"; VX5-Yx-dmD.segmentTitles[1] = "Quiz"; ObjectID = "VX5-Yx-dmD"; */
+//"VX5-Yx-dmD.segmentTitles[1]" = "测验";
+//
+///* Class = "UITabBarItem"; title = "Library"; ObjectID = "xIb-qY-DPy"; */
+//"xIb-qY-DPy.title" = "图书馆";
+
+
+/* Class = "UISegmentedControl"; VX5-Yx-dmD.segmentTitles[0] = "Education"; ObjectID = "VX5-Yx-dmD"; */
+"VX5-Yx-dmD.segmentTitles[0]" = "Education";
+
+/* Class = "UISegmentedControl"; VX5-Yx-dmD.segmentTitles[1] = "Quiz"; ObjectID = "VX5-Yx-dmD"; */
+"VX5-Yx-dmD.segmentTitles[1]" = "Quiz";
+
+/* Class = "UITabBarItem"; title = "Library"; ObjectID = "xIb-qY-DPy"; */
+"xIb-qY-DPy.title" = "Library";

@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "It has been 2 weeks since you finished your previous\nmodule!"; ObjectID = "6ba-TF-KqR"; */
+"It has been 2 weeks since you finished your previous module!" = "It has been 2 weeks since you finished your previous module!";
+
+/* Class = "UILabel"; text = "Next module awaits!"; ObjectID = "HpX-Ps-2BD"; */
+"Next module awaits!" = "Next module awaits!";
+
+/* Class = "UILabel"; text = "13 minutes ago"; ObjectID = "f3V-Z4-BCh"; */
+"13 minutes ago" = "13 minutes ago";
+
+/* Class = "UITabBarItem"; title = "Notifications"; ObjectID = "smq-aT-PI9"; */
+"smq-aT-PI9.title" = "Notifications";

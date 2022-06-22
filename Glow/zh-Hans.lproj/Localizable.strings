@@ -1,0 +1,110 @@
+/* 
+  Localizable.strings
+  Glow
+
+  Created by Cognitiveclouds2021_4 on 30/03/22.
+  Copyright © 2022 CC. All rights reserved.
+*/
+// MARK: - Home
+"Hi" = "你好";
+"Good to see you’re back at it." = "很高兴看到你回来了";
+"Ask a question?" = "问一个问题";
+"Unblock all your confusions with Glow" = "用解开你所有的困惑";
+"dgZ-Xa-Fi3.title" = "故乡";
+"Home" = "故乡";
+"Recommended Learning Bites" = "推荐的学习内容";
+"Continue Learning" =  "继续学习";
+"Already Completed" = "已经完成";
+
+// MARK: - Library
+"Education" = "教育";
+"Quiz" = "测验";
+"Library" = "图书馆";
+"See all" = "查看全部";
+"xIb-qY-DPy.title" = "图书馆";
+
+// MARK: - Topics
+"Units" = "单位";
+"Comment" = "评论";
+
+// MARK: - Module Summary
+"Write down your thoughts" = "写下你的想法";
+"Back" = "后退";
+"You already know how to spot early signs of complications and what to do (Inspection and Intervention)" = "您已经知道如何发现并发症的早期迹象以及该怎么做（检查和干预）";
+"Set" = "放";
+"FLo-VI-WDM.text" = "Label";
+"What are some important things you learned?" = "你学到了哪些重要的东西？";
+"Digital Coaching Session" = "数字辅导课程";
+"Set a Time" = "设定时间";
+"Any suggestions for the creations of the app?" = "对应用程序的创建有什么建议吗？";
+"You already know how to care for your feet properly (Hygiene and Protection)" = "您已经知道如何正确护理脚部（卫生和保护）";
+"You can access your journal within your profile." = "您可以在个人资料中访问您的日记。";
+"Next" = "下一个";
+"Any suggestions for the creators of the app?" = "对应用程序的创建者有什么建议吗？";
+"Reflection Journal" = "反思日记";
+"You already know why caring for your feet is important" = "你已经知道为什么照顾你的脚很重要";
+"Submit" = "提交";
+"Glow" = "辉光";
+"Write a Review" = "写评论";
+"Share what you think about this module with other users" = "与其他用户分享您对该模块的看法";
+"Glow digital companion will help you review what you have just learned, set a reminder for a coaching session" = "Glow 数字伴侣将帮助您复习刚刚学到的内容，设置辅导课程提醒";
+"Skip" = "跳过";
+"Module Summary" = "模块总结";
+"Save" = "保存";
+"Done" = "完毕";
+
+// MARK: - Profile
+"Profile" = "轮廓";
+"Edit Profile" = "编辑个人资料";
+"My activities" = "我的活动";
+"Reflection journal" = "反思日志";
+"Bookmarked pages" = "书签页面";
+"Favourite Modules" = "最喜欢的模块";
+"Settings" = "设置";
+"Log Out" = "登出";
+
+"First Name" = "名";
+"Last Name" = "姓";
+"DOB" = "出生日期";
+"Gender" = "性别";
+"Male" = "男性";
+"Female" = "女性";
+
+"Choose a theme" = "选择一个主题";
+"Light" = "光";
+"Dark" = "黑暗的";
+"Reading Font Size" = "阅读字体大小";
+"14 - Hello David" = "14 - 你好大卫";
+"16 - Hello David" = "16 - 你好大卫";
+"18 - Hello David" = "18 - 你好大卫";
+"20 - Hello David" = "20 - 你好大卫";
+"Language Preference" = "语言首选项";
+"Save Changes" = "保存更改";
+"Favourite Module" = "最喜欢的模块";
+
+"Your Diabetes Knowledge achievement" = "您的糖尿病知识成就";
+"Your Diabetes Skills achievement\n(Coaching sessions completed)" = "您的糖尿病技能成就\n（已完成辅导课程）";
+"Your learning journey last week" = "你上周的学习之旅";
+"Minutes spent in the app per day" = "每天在应用程序中花费的分钟数";
+"modules" = "模块";
+"coaching sessions" = "辅导课程";
+"days" = "天";
+
+// MARK: - Search
+"Search for module, unit or more" = "搜索模块、单元或更多";
+"Recent Searches" = "最近的搜索";
+"Search" = "搜索";
+"Search Result" = "搜索结果";
+"u03-iJ-Jtv.title" = "搜索";
+
+// MARK: - Notifications
+"smq-aT-PI9.title" = "通知";
+"New" = "新的";
+"Earlier" = "早些时候";
+"Notifications" = "通知";
+"Notification" = "通知";
+ 
+
+"Profile updated" = "个人资料已更新";
+"Reflection Journal" = "反思日记";
+"Write a Review" = "写评论";

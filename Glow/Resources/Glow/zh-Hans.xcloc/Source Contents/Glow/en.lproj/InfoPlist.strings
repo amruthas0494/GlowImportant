@@ -1,0 +1,4 @@
+/* Bundle name */
+"CFBundleName" = "Glow";
+/* Privacy - Face ID Usage Description */
+"NSFaceIDUsageDescription" = "Authentication with TouchId or FaceID";

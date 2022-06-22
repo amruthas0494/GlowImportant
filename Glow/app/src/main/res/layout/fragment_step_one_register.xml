@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".feature.auth.presentation.StepOneRegisterFragment">
+
+   <include layout="@layout/guideline_10dp"/>
+
+   <com.cc.glow.widgets.GlowStepView
+       android:id="@+id/stepViewRegister"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:stepView_title="@string/label_step_one"
+       app:stepView_message="@string/label_create_account"
+       />
+
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toBottomOf="@+id/stepViewRegister"
+       app:layout_constraintStart_toStartOf="@+id/guideline_start"
+       app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+       >
+
+      <LinearLayout
+          android:layout_marginTop="@dimen/margin_20dp"
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+         <com.cc.glow.widgets.GlowEditText
+             android:id="@+id/etUserName"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             app:get_label="@string/label_user_name"
+             android:inputType="textPersonName"
+             />
+
+         <com.cc.glow.widgets.GlowEditText
+             android:id="@+id/etPassword"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             app:get_label="@string/label_password"
+             android:layout_marginTop="@dimen/margin_15dp"
+             android:inputType="textPassword"
+             />
+
+         <com.cc.glow.widgets.GlowEditText
+             android:id="@+id/etCPassword"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/margin_15dp"
+             app:get_label="@string/label_repeat_password"
+             android:inputType="textPassword"
+             />
+
+      </LinearLayout>
+
+
+   </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

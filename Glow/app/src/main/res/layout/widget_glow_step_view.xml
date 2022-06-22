@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/glow_stepView_bg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_step_view"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/glow_stepView_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        tools:text="@string/label_step_one"
+        android:textSize="@dimen/ts_20sp"
+        android:textColor="@color/appDarkAppColor"
+        app:layout_constraintStart_toStartOf="@+id/glow_stepView_msg"
+        app:layout_constraintBottom_toTopOf="@+id/glow_stepView_msg"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/glow_stepView_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginBottom="@dimen/margin_15dp"
+        tools:text="@string/label_create_account"
+        app:layout_constraintStart_toStartOf="@+id/glow_stepView_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/glow_stepView_bg"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

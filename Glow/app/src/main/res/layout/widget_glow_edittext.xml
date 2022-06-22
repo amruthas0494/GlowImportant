@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/guideline_10dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/glow_et_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:text="@string/app_name"
+        android:textColor="@color/glow_et_hint_color"
+        android:textSize="@dimen/ts_14sp"
+        app:layout_constraintBottom_toTopOf="@+id/tilValue"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/glow_et_til"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        android:layout_marginTop="@dimen/margin_5dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:errorIconDrawable="@null"
+        app:errorTextColor="@color/appErrorRedColor"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/glow_et_label"
+        app:layout_constraintTop_toBottomOf="@+id/glow_et_label">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/glow_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_3dp"
+            android:layout_marginEnd="@dimen/margin_3dp"
+            android:drawablePadding="@dimen/margin_3dp"
+            android:padding="@dimen/margin_10dp"
+            android:background="@drawable/selector_glow_edit_text"
+            android:textColor="@color/appTextColor"
+            android:textSize="@dimen/ts_18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "We encountered an error here. Will you please try one more time?"; ObjectID = "4MO-Cz-yHA"; */
+"4MO-Cz-yHA.text" = "We encountered an error here. Will you please try one more time?";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BNK-MD-R4g"; */
+"BNK-MD-R4g.text" = "Label";
+
+/* Class = "UILabel"; text = "Unblock all your confusions with Glow"; ObjectID = "KrA-i5-nh7"; */
+"KrA-i5-nh7.text" = "Unblock all your confusions with Glow";
+
+/* Class = "UILabel"; text = "Oops!Something went wrong"; ObjectID = "TQr-qE-Tp0"; */
+"TQr-qE-Tp0.text" = "Oops!Something went wrong";
+
+/* Class = "UILabel"; text = "Hi"; ObjectID = "ZkQ-Ey-gJn"; */
+"ZkQ-Ey-gJn.text" = "Hi";
+
+/* Class = "UILabel"; text = "Ask a question?"; ObjectID = "abP-5y-rs2"; */
+"abP-5y-rs2.text" = "Ask a question?";
+
+/* Class = "UIButton"; normalTitle = "Try Again"; ObjectID = "cua-mB-lEp"; */
+"cua-mB-lEp.normalTitle" = "Try Again";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "dgZ-Xa-Fi3"; */
+"dgZ-Xa-Fi3.title" = "家";
+
+/* Class = "UILabel"; text = "Good to see you’re back at it."; ObjectID = "ffb-gk-Icd"; */
+"ffb-gk-Icd.text" = "Good to see you’re back at it.";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "n0p-TM-3NM"; */
+"n0p-TM-3NM.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "v34-7s-jtc"; */
+"v34-7s-jtc.normalTitle" = "Button";

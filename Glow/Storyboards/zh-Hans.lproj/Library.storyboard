@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uAX-7X-kbZ">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Library-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="LibraryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LibraryViewController" customModule="Glow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VX5-Yx-dmD">
+                                <rect key="frame" x="18" y="106" width="392" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="fQf-ya-qhw">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="62"/>
+                                    </constraint>
+                                </constraints>
+                                <segments>
+                                    <segment title="Education"/>
+                                    <segment title="Quiz"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-iD-2oG">
+                                <rect key="frame" x="0.0" y="149" width="428" height="694"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="P5W-72-gcs"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="1RO-70-SRT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VX5-Yx-dmD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="18" id="4Wt-8c-hqX">
+                                <variation key="heightClass=regular-widthClass=regular" constant="36"/>
+                            </constraint>
+                            <constraint firstItem="aUz-iD-2oG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8DP-G3-O38">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="aUz-iD-2oG" firstAttribute="top" secondItem="VX5-Yx-dmD" secondAttribute="bottom" constant="12" id="BAD-fy-hvk">
+                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                            </constraint>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VX5-Yx-dmD" secondAttribute="trailing" constant="18" id="CUf-R0-Bqb">
+                                <variation key="heightClass=regular-widthClass=regular" constant="36"/>
+                            </constraint>
+                            <constraint firstItem="VX5-Yx-dmD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="18" id="WbQ-VY-D4N">
+                                <variation key="heightClass=regular-widthClass=regular" constant="36"/>
+                            </constraint>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="aUz-iD-2oG" secondAttribute="bottom" id="vyx-yp-Vna">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aUz-iD-2oG" secondAttribute="trailing" id="zxy-Wu-iUE">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Library" image="bookInactive" selectedImage="bookActive" id="xIb-qY-DPy"/>
+                    <navigationItem key="navigationItem" id="VAr-BY-sPi"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="VX5-Yx-dmD" id="D89-XY-WXj"/>
+                        <outlet property="tableView" destination="aUz-iD-2oG" id="d4F-pE-b28"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="79.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nMk-EG-pra">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uAX-7X-kbZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UkV-F8-5g4">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="Ofn-qD-cqz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dx2-dB-Ahn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bookActive" width="24" height="24"/>
+        <image name="bookInactive" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

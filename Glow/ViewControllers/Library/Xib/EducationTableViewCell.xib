@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="216" id="KGk-i7-Jjw" customClass="EducationTableViewCell" customModule="Glow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="322"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="377" height="322"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="KHc-vf-G74">
+                        <rect key="frame" x="16" y="16" width="298" height="35"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self-Monitoring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs2-4l-aXW">
+                                <rect key="frame" x="0.0" y="0.0" width="298" height="20"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
+                                <color key="textColor" name="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topics that are most learnt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prT-Vv-O7D">
+                                <rect key="frame" x="0.0" y="22" width="298" height="13"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="11"/>
+                                <color key="textColor" name="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="prT-Vv-O7D" secondAttribute="bottom" id="ANo-pt-hSs"/>
+                            <constraint firstItem="Gs2-4l-aXW" firstAttribute="leading" secondItem="KHc-vf-G74" secondAttribute="leading" id="SiN-Ej-qaA"/>
+                            <constraint firstItem="prT-Vv-O7D" firstAttribute="leading" secondItem="KHc-vf-G74" secondAttribute="leading" id="k96-z5-Pce"/>
+                            <constraint firstAttribute="trailing" secondItem="Gs2-4l-aXW" secondAttribute="trailing" id="ttY-cE-Zxp"/>
+                            <constraint firstItem="prT-Vv-O7D" firstAttribute="top" secondItem="Gs2-4l-aXW" secondAttribute="bottom" constant="2" id="v3l-yV-cN4"/>
+                            <constraint firstAttribute="trailing" secondItem="prT-Vv-O7D" secondAttribute="trailing" id="xZS-Qz-aZt"/>
+                            <constraint firstItem="Gs2-4l-aXW" firstAttribute="top" secondItem="KHc-vf-G74" secondAttribute="top" id="xdu-A4-0yj"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxn-11-8hH">
+                        <rect key="frame" x="322" y="19.5" width="39" height="28"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="See all">
+                            <color key="titleColor" name="appThemeColor"/>
+                        </state>
+                    </button>
+                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="K6O-Oe-zSg">
+                        <rect key="frame" x="16" y="81" width="345" height="217.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S9p-RB-rKV">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="ppm-Q0-ptp"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="Rir-PI-5sg"/>
+                        </connections>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="K6O-Oe-zSg" secondAttribute="trailing" constant="16" id="BLq-fY-ezn">
+                        <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                    </constraint>
+                    <constraint firstItem="KHc-vf-G74" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="CMS-St-eyD"/>
+                    <constraint firstItem="K6O-Oe-zSg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="DTf-pL-4c1">
+                        <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                    </constraint>
+                    <constraint firstAttribute="trailing" secondItem="kxn-11-8hH" secondAttribute="trailing" constant="16" id="c9q-uF-jEA">
+                        <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                    </constraint>
+                    <constraint firstItem="KHc-vf-G74" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="hqd-bp-TUo"/>
+                    <constraint firstAttribute="bottom" secondItem="K6O-Oe-zSg" secondAttribute="bottom" constant="23.5" id="hz6-Z5-01R"/>
+                    <constraint firstItem="kxn-11-8hH" firstAttribute="leading" secondItem="KHc-vf-G74" secondAttribute="trailing" constant="8" id="kZD-Ql-Riq"/>
+                    <constraint firstItem="K6O-Oe-zSg" firstAttribute="top" secondItem="KHc-vf-G74" secondAttribute="bottom" constant="30" id="xAr-T9-MWx"/>
+                    <constraint firstItem="kxn-11-8hH" firstAttribute="centerY" secondItem="KHc-vf-G74" secondAttribute="centerY" id="ymF-G4-EOo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="K6O-Oe-zSg" id="2hd-St-yFO"/>
+                <outlet property="headingLabel" destination="Gs2-4l-aXW" id="tKU-JF-SpI"/>
+                <outlet property="seeAllButton" destination="kxn-11-8hH" id="5eE-bB-wVB"/>
+                <outlet property="subtitleLabel" destination="prT-Vv-O7D" id="DIo-NG-nXp"/>
+            </connections>
+            <point key="canvasLocation" x="119.56521739130436" y="119.19642857142857"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="appThemeColor">
+            <color red="0.72899997234344482" green="0.19200000166893005" blue="0.88200002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="darkTextColor">
+            <color red="0.125" green="0.17599999904632568" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

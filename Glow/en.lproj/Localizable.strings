@@ -1,0 +1,112 @@
+/* 
+  Localizable.strings
+  Glow
+
+  Created by Cognitiveclouds2021_4 on 30/03/22.
+  Copyright © 2022 CC. All rights reserved.
+*/
+// MARK: - Home
+"Hi" =  "Hi";
+"Good to see you’re back at it." =  "Good to see you’re back at it.";
+"Ask a question?" = "Ask a question?";
+"Unblock all your confusions with Glow" = "Unblock all your confusions with Glow";
+"dgZ-Xa-Fi3.title" = "Home";
+"Recommended Learning Bites" = "Recommended Learning Bites";
+"Continue Learning" =  "Continue Learning";
+"Already Completed" = "Already Completed";
+
+// MARK: - Library
+"Education" = "Education";
+"Quiz" = "Quiz";
+"Library" = "Library";
+"See all" = "See all";
+
+// MARK: - Topics
+"Units" = "Units";
+"Comment" = "Comment";
+
+// MARK: - Module Summary
+"Write down your thoughts" = "Write down your thoughts";
+"Back" = "Back";
+"You already know how to spot early signs of complications and what to do (Inspection and Intervention)" = "You already know how to spot early signs of complications and what to do (Inspection and Intervention)";
+"Set" = "Set";
+"FLo-VI-WDM.text" = "Label";
+"What are some important things you learned?" = "What are some important things you learned?";
+"Topic: Cutting Nails" = "Topic: Cutting Nails";
+"Digital Coaching Session" = "Digital Coaching Session";
+"Set a Time" = "Set a Time";
+"Congratulations! We've reached the end of module 5!" = "Congratulations! We've reached the end of module 5!";
+"Any suggestions for the creations of the app?" = "Any suggestions for the creations of the app?";
+"You already know how to care for your feet properly (Hygiene and Protection)" = "You already know how to care for your feet properly (Hygiene and Protection)";
+"You can access your journal within your profile." = "You can access your journal within your profile.";
+"Diabetes affects feet by damaging nerves and veins" = "Diabetes affects feet by damaging nerves and veins";
+"Next" = "Next";
+"Any suggestions for the creators of the app?" = "Any suggestions for the creators of the app?";
+"Reflection Journal" = "Reflection Journal";
+"You already know why caring for your feet is important" = "You already know why caring for your feet is important";
+"Submit" = "Submit";
+"Glow" = "Glow" ;
+"Write a Review" = "Write a Review";
+"Share what you think about this module with other users" = "Share what you think about this module with other users";
+"Glow digital companion will help you review what you have just learned, set a reminder for a coaching session" = "Glow digital companion will help you review what you have just learned, set a reminder for a coaching session";
+"Skip" = "Skip";
+"Module Summary" = "Module Summary";
+"Save" = "Save";
+"Please enter reflection journal" = "Please enter reflection journal";
+"Done" = "Done";
+
+// MARK: - Profile
+"Profile" = "Profile";
+"Edit Profile" = "Edit Profile";
+"My activities" = "My activities";
+"Reflection journal" = "Reflection journal";
+"Bookmarked pages" = "Bookmarked pages";
+"Favourite Modules" = "Favourite Modules";
+"Settings" = "Settings";
+"Log Out" = "Log Out";
+
+"First Name" = "First Name";
+"Last Name" = "Last Name";
+"DOB" = "DOB";
+"Gender" = "Gender";
+"Male" = "Male";
+"Female" = "Female";
+
+"Choose a theme" = "Choose a theme";
+"Light" = "Light";
+"Dark" = "Dark";
+"Reading Font Size" = "Reading Font Size";
+"14 - Hello David" = "14 - Hello David";
+"16 - Hello David" = "16 - Hello David";
+"18 - Hello David" = "18 - Hello David";
+"20 - Hello David" = "20 - Hello David";
+"Language Preference" = "Language Preference";
+"Save Changes" = "Save Changes";
+"Favourite Module" = "Favourite Module";
+
+"Your Diabetes Knowledge achievement" = "Your Diabetes Knowledge achievement";
+"Your Diabetes Skills achievement\n(Coaching sessions completed)" = "Your Diabetes Skills achievement\n(Coaching sessions completed)";
+"Your learning journey last week" = "Your learning journey last week";
+"Minutes spent in the app per day" = "Minutes spent in the app per day";
+"modules" = "modules";
+"coaching sessions" = "coaching sessions";
+"days" = "days";
+
+// MARK: - Search
+"Search for module, unit or more" = "Search for module, unit or more";
+"Recent Searches" = "Recent Searches";
+"Search" = "Search";
+"Search Result" = "Search Result";
+"u03-iJ-Jtv.title" = "Search";
+
+// MARK: - Notification
+"smq-aT-PI9.title" = "Notifications";
+"New" = "New";
+"Earlier" = "Earlier";
+"Notifications" = "Notifications";
+
+
+"Diabetes and your feet" = "Diabetes and your feet";
+"Profile updated" = "Profile updated";
+"Reflection Journal" = "Reflection Journal";
+"Write a Review" = "Write a Review";

@@ -1,0 +1,15 @@
+/* 
+  Notification.strings
+  Glow
+
+  Created by apple on 02/03/22.
+  Copyright © 2022 CC. All rights reserved.
+*/
+"It has been 2 weeks since you finished your previous module!" = "It has been 2 weeks since you finished your previous module!";
+"Next module awaits!" = "Next module awaits!";
+"13 minutes ago" = "13 minutes ago";
+/* Class = "UITabBarItem"; title = "Notifications"; ObjectID = "smq-aT-PI9"; */
+"smq-aT-PI9.title" = "Notifications";
+//"welcomeImage" = "welcomeImage";
+"New" = "New";
+"Earlier" = "Earlier";

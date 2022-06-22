@@ -1,0 +1,86 @@
+/* 
+  Onboarding.strings
+  Glow
+
+  Created by apple on 08/03/22.
+  Copyright © 2022 CC. All rights reserved.
+*/
+"Welcome to Glow,\nYour Diabetes Education Assistant" = "欢迎来到辉光, \n您的糖尿病教育助理";
+"The all-in-one app for your diabetic needs.\nLearn. Track. Consult." = "满足您的糖尿病需求的多合一应用程序。\n学习。追踪。咨询。";
+"Learn. Track. Consult." = "学习。追踪。咨询。";
+"Get Started" = "开始使用";
+"Strong" = "强的";
+"Repeat Password"  = "重复输入密码";
+"User Name" = "用户名";
+"Password" = "密码";
+"Allow Healix to text me important alerts" = "允许 Healix 向我发送重要警报";
+"I have read and agree to Terms of Use, Privacy Policy & Notice of Privacy Policy." = "我已阅读并同意使用条款、隐私政策和隐私政策通知。";
+"Terms of Use, Privacy Policy & Notice of Privacy Policy." = "使用条款、隐私政策和隐私政策通知。";
+"Already have an account? Login" = "已经有一个帐户？登录";
+"Next" = "下一个";
+"Verify your Email" = "验证您的电子邮件";
+"Email" = "电子邮件";
+"Resend Verification" = "重新发送验证";
+
+"Mobile Number" = "手机号码";
+"Verify your Mobile Number" = "验证您的手机号码";
+"Resend OTP" = "重新发送一次性密码";
+"Haven’t received OTP yet?" = "还没收到OTP？";
+"An OTP has been sent to +X XXX XXX XXX,\nPlease enter the 6-digit OTP" = "OTP 已发送至 +X XXX XXX XXX，\n请输入 6 位 OTP";
+"In the future, how do you want to sign in? Choose one of the options:" = "以后想怎么登录？选择以下选项之一：";
+"4-digit PIN" = "4 位密码";
+"Fingerprint" = "指纹";
+"Face Identification" = "人脸识别";
+"Study Registration No." = "学习注册号";
+"Full Name" = "全名";
+"How should we call you?" = "我们应该怎么称呼你？";
+//"123456" = "十二万三千四百五十六";
+"123456" = "123456十二万三千四百五十六";
+
+
+"Date of Birth" = "出生日期";
+"Gender" = "性别";
+"Ethnicity" = "种族";
+"I have type 2 diabetes" = "我有 2 型糖尿病";
+"Please indicate if you have any of the conditions:" = "请说明您是否有任何条件";
+"Diabetes retinopathy" = "糖尿病视网膜病变";
+"At what age did you learn from your doctor that you had diabetes?" = "您在几岁时从医生那里得知您患有糖尿病？";
+"I have type 2 diabetes" = "我有 2 型糖尿病";
+//"29" = "二十九";
+"29" = "29";
+"What single change would improve your life right now?"  = "现在有什么改变可以改善你的生活？";
+"What is your main goal to achieve through participating in this study? At the moment choose only one:" = "通过参与这项研究，你的主要目标是什么？目前只选择一个：";
+"Be more active" = "更加活跃";
+"Make better diet choices" = "做出更好的饮食选择";
+"Better manage medications" = "更好地管理药物";
+"Learn more about diabetes" = "了解有关糖尿病的更多信息";
+"Make control over healthy diet" = "控制健康饮食";
+"More energy from physical activity" = "身体活动带来更多能量";
+"More adherence to medication" = "更坚持服药";
+"More focus on appointments" = "更注重约会";
+"Less stress from diabetes management" = "减轻糖尿病管理带来的压力";
+"Nothing" = "没有";
+"On a scale from 0 to 10, with 10 being very interested, how ready are you to improve your diabetes self-management?"  = "在 0 到 10 的范围内，其中 10 表示非常感兴趣，你准备好改善你的糖尿病自我管理了吗？";
+"On a scale from 0 to 10, with 10 being very ready, how ready are you to learn more about diabetes self-management?" = "在 0 到 10 的范围内，其中 10 表示非常感兴趣，你准备好改善你的糖尿病自我管理了吗？";
+"You’re almost there!" = "你快到了！";
+"These background questions will help us tailor the content more suited for your needs!" = "这些背景问题将帮助我们定制更适合您需求的内容！";
+"Choose a theme " = "选择一个主题";
+"Reading Font Size" = "阅读字体大小";
+"Light" = "光";
+"Dark" = "黑暗的";
+"0\nNot ready" = "0\n未准备好";
+"10\nvery ready" = "10\n准备就绪";
+
+"Step One" = "第一步";
+"Step Two" = "第二步";
+"Step Three" = "第三步";
+"Step Four" = "第四步";
+"Step Five" = "第五步";
+"Create your account!" = "创建您的帐户！";
+"Tell me more about yourself" = "告诉我更多关于你的信息";
+ "Please, choose the correct information regarding your diabetes status" = "
+请选择有关您的糖尿病状况的正确信息";
+"Background Quiz" = "背景测验";
+"Personalise the appearance!" = "个性化外观！";
+
+

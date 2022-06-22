@@ -1,0 +1,153 @@
+
+/* Class = "UITextView"; text = "Write down your thoughts"; ObjectID = "0aZ-jV-zS4"; */
+"0aZ-jV-zS4.text" = "写下你的想法";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "0tU-Oq-W92"; */
+"0tU-Oq-W92.normalTitle" = "下一个";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "41n-he-gV9"; */
+"41n-he-gV9.normalTitle" = "后退";
+
+/* Class = "UILabel"; text = "Diabetes affects feer by damaging nerves and veins"; ObjectID = "4pI-z2-VtT"; */
+"4pI-z2-VtT.text" = "Diabetes affects feer by damaging nerves and veins";
+
+/* Class = "UILabel"; text = "You already know how to spot early signs of complications and what to do (Inspection and Intervention)"; ObjectID = "6kw-GA-crf"; */
+"6kw-GA-crf.text" = "You already know how to spot early signs of complications and what to do (Inspection and Intervention)";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "7Fd-v7-5vH"; */
+"7Fd-v7-5vH.normalTitle" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "8g5-pY-oVP"; */
+"8g5-pY-oVP.normalTitle" = "Skip";
+
+/* Class = "UILabel"; text = "Digital Coaching Session"; ObjectID = "AAm-9F-gPs"; */
+"AAm-9F-gPs.text" = "Digital Coaching Session";
+
+/* Class = "UILabel"; text = "You can access your journal within your profile."; ObjectID = "CLk-qv-1Ih"; */
+"CLk-qv-1Ih.text" = "You can access your journal within your profile.";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "COZ-Vt-W9K"; */
+"COZ-Vt-W9K.normalTitle" = "Submit";
+
+/* Class = "UIButton"; normalTitle = "Set"; ObjectID = "F7T-V6-QXN"; */
+"F7T-V6-QXN.normalTitle" = "Set";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FLo-VI-WDM"; */
+"FLo-VI-WDM.text" = "Label";
+
+/* Class = "UITextView"; text = "Write about your thoughts"; ObjectID = "HLd-41-zvM"; */
+"HLd-41-zvM.text" = "Write about your thoughts";
+
+/* Class = "UILabel"; text = "You already know why caring for your feet is important "; ObjectID = "I5R-BQ-bnf"; */
+"I5R-BQ-bnf.text" = "You already know why caring for your feet is important ";
+
+/* Class = "UILabel"; text = "Reflection Journal"; ObjectID = "Igg-Jf-Jin"; */
+"Igg-Jf-Jin.text" = "Reflection Journal";
+
+/* Class = "UILabel"; text = "What are some important things you learned? "; ObjectID = "JKv-rr-jsy"; */
+"JKv-rr-jsy.text" = "What are some important things you learned? ";
+
+/* Class = "UILabel"; text = "Topic:"; ObjectID = "JM6-uQ-UDK"; */
+"JM6-uQ-UDK.text" = "Topic:";
+
+/* Class = "UILabel"; text = "Digital Coaching Session"; ObjectID = "LEl-Yb-S9a"; */
+"LEl-Yb-S9a.text" = "Digital Coaching Session";
+
+/* Class = "UILabel"; text = "Set Time"; ObjectID = "N14-w4-6mp"; */
+"N14-w4-6mp.text" = "Set Time";
+
+/* Class = "UIButton"; normalTitle = "Set"; ObjectID = "O9B-6l-Rz6"; */
+"O9B-6l-Rz6.normalTitle" = "Set";
+
+/* Class = "UILabel"; text = "Set a Time"; ObjectID = "Q1f-g7-pip"; */
+"Q1f-g7-pip.text" = "Set a Time";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QM5-Md-cz1"; */
+"QM5-Md-cz1.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "WcB-aX-Yxf"; */
+"WcB-aX-Yxf.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Congratulations! We've reached the end of module 5!"; ObjectID = "XVs-7M-QtE"; */
+"XVs-7M-QtE.text" = "Congratulations! We've reached the end of module 5!";
+
+/* Class = "UITextView"; text = "Write about your thoughts"; ObjectID = "YL5-EX-dHY"; */
+"YL5-EX-dHY.text" = "Write about your thoughts";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "ZPy-1v-1Lg"; */
+"ZPy-1v-1Lg.normalTitle" = "Skip";
+
+/* Class = "UILabel"; text = "Any suggestions for the creations of the app?"; ObjectID = "Ze9-fV-lyX"; */
+"Ze9-fV-lyX.text" = "Any suggestions for the creations of the app?";
+
+/* Class = "UILabel"; text = "Congratulations! We've reached the end of module 5!"; ObjectID = "Ziz-En-elH"; */
+"Ziz-En-elH.text" = "Congratulations! We've reached the end of module 5!";
+
+/* Class = "UILabel"; text = "You already know how to care for your feet properly (Hygiene and Protection)"; ObjectID = "add-g5-PcU"; */
+"add-g5-PcU.text" = "You already know how to care for your feet properly (Hygiene and Protection)";
+
+/* Class = "UILabel"; text = "You can access your journal within your profile."; ObjectID = "ajD-vx-tgF"; */
+"ajD-vx-tgF.text" = "You can access your journal within your profile.";
+
+/* Class = "UILabel"; text = "Topic:"; ObjectID = "cXH-Mz-eST"; */
+"cXH-Mz-eST.text" = "Topic:";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "cZB-BF-82i"; */
+"cZB-BF-82i.normalTitle" = "Submit";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "dyG-4Q-Vv2"; */
+"dyG-4Q-Vv2.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Diabetes affects feer by damaging nerves and veins"; ObjectID = "gct-3H-6cW"; */
+"gct-3H-6cW.text" = "Diabetes affects feer by damaging nerves and veins";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "iOy-PA-Csq"; */
+"iOy-PA-Csq.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Unit 1"; ObjectID = "jEr-Vf-lsy"; */
+"jEr-Vf-lsy.text" = "Unit 1";
+
+/* Class = "UILabel"; text = "Any suggestions for the creations of the app?"; ObjectID = "k42-aV-RnL"; */
+"k42-aV-RnL.text" = "Any suggestions for the creations of the app?";
+
+/* Class = "UILabel"; text = "Reflection Journal"; ObjectID = "kEA-aA-dYh"; */
+"kEA-aA-dYh.text" = "Reflection Journal";
+
+/* Class = "UILabel"; text = "Share what you think about this module with other users"; ObjectID = "kuA-WP-7hG"; */
+"kuA-WP-7hG.text" = "Share what you think about this module with other users";
+
+/* Class = "UILabel"; text = "You already know why caring for your feet is important "; ObjectID = "lR4-f9-ymO"; */
+"lR4-f9-ymO.text" = "You already know why caring for your feet is important ";
+
+/* Class = "UILabel"; text = "Glow digital companion will help you review what you have just learned, set a reminder for a coaching session"; ObjectID = "nTd-3H-Bcc"; */
+"nTd-3H-Bcc.text" = "Glow digital companion will help you review what you have just learned, set a reminder for a coaching session";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "ohw-iI-BVQ"; */
+"ohw-iI-BVQ.normalTitle" = "Skip";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "p7K-kf-C5c"; */
+"p7K-kf-C5c.normalTitle" = "Submit";
+
+/* Class = "UIBarButtonItem"; title = "Glow"; ObjectID = "pM0-hj-4sp"; */
+"pM0-hj-4sp.title" = "Glow";
+
+/* Class = "UILabel"; text = "Write a Review"; ObjectID = "pbA-hd-dQS"; */
+"pbA-hd-dQS.text" = "Write a Review";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "qR5-y0-KPg"; */
+"qR5-y0-KPg.normalTitle" = "Skip";
+
+/* Class = "UILabel"; text = "Share what you think about this module with other users "; ObjectID = "rOy-3g-wMx"; */
+"rOy-3g-wMx.text" = "Share what you think about this module with other users ";
+
+/* Class = "UILabel"; text = "Glow digital companion will help you review what you have just learned, set a reminder for a coaching session"; ObjectID = "td8-TD-DBf"; */
+"td8-TD-DBf.text" = "Glow digital companion will help you review what you have just learned, set a reminder for a coaching session";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "ub8-gM-ZvN"; */
+"ub8-gM-ZvN.normalTitle" = "Skip";
+
+/* Class = "UILabel"; text = "Share what you think about this module with other users"; ObjectID = "vMm-9M-YX7"; */
+"vMm-9M-YX7.text" = "Share what you think about this module with other users";
+
+/* Class = "UILabel"; text = "Write a Review"; ObjectID = "zyc-q7-5Ya"; */
+"zyc-q7-5Ya.text" = "Write a Review";

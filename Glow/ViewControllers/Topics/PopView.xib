@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopView" customModule="Glow" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="iN0-l3-epB" id="P8A-ER-Xsv"/>
+                <outlet property="dashBoardButton" destination="jl7-Hx-ccd" id="irc-5Z-WRK"/>
+                <outlet property="nextUnitButton" destination="Ih9-O4-kEY" id="94b-yS-1Vd"/>
+                <outlet property="titleLabel" destination="XAA-nx-dAm" id="ief-vb-5HL"/>
+                <outlet property="unitLabel" destination="Ed2-gC-SOj" id="YWe-eu-bsD"/>
+                <outlet property="view" destination="iN0-l3-epB" id="pXj-I1-Je4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="253"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAA-nx-dAm">
+                    <rect key="frame" x="164" y="16" width="86" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih9-O4-kEY">
+                    <rect key="frame" x="16" y="97" width="382" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="vQG-fE-gLC">
+                            <variation key="heightClass=regular-widthClass=regular" constant="88"/>
+                        </constraint>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jl7-Hx-ccd">
+                    <rect key="frame" x="16" y="165" width="382" height="44"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed2-gC-SOj">
+                    <rect key="frame" x="51" y="52.5" width="312" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="Ed2-gC-SOj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="51" id="5mw-Xj-To5">
+                    <variation key="heightClass=regular-widthClass=regular" constant="102"/>
+                </constraint>
+                <constraint firstItem="Ih9-O4-kEY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="G9Q-Zg-4UO">
+                    <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                </constraint>
+                <constraint firstItem="Ih9-O4-kEY" firstAttribute="trailing" secondItem="jl7-Hx-ccd" secondAttribute="trailing" id="Ljd-Yv-dsl"/>
+                <constraint firstItem="jl7-Hx-ccd" firstAttribute="top" secondItem="Ih9-O4-kEY" secondAttribute="bottom" constant="24" id="QPJ-ci-eTV">
+                    <variation key="heightClass=regular-widthClass=regular" constant="48"/>
+                </constraint>
+                <constraint firstItem="XAA-nx-dAm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="164" id="ehQ-mF-MUr">
+                    <variation key="heightClass=regular-widthClass=regular" constant="328"/>
+                </constraint>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XAA-nx-dAm" secondAttribute="trailing" constant="164" id="fc3-VJ-wGS">
+                    <variation key="heightClass=regular-widthClass=regular" constant="328"/>
+                </constraint>
+                <constraint firstItem="Ih9-O4-kEY" firstAttribute="top" secondItem="Ed2-gC-SOj" secondAttribute="bottom" constant="24" id="iFc-tP-WRc">
+                    <variation key="heightClass=regular-widthClass=regular" constant="48"/>
+                </constraint>
+                <constraint firstItem="jl7-Hx-ccd" firstAttribute="height" secondItem="Ih9-O4-kEY" secondAttribute="height" id="igy-Ys-Bme"/>
+                <constraint firstItem="Ed2-gC-SOj" firstAttribute="top" secondItem="XAA-nx-dAm" secondAttribute="bottom" constant="16" id="pyK-BC-8V8">
+                    <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                </constraint>
+                <constraint firstItem="Ih9-O4-kEY" firstAttribute="leading" secondItem="jl7-Hx-ccd" secondAttribute="leading" id="smx-ys-lhl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ih9-O4-kEY" secondAttribute="trailing" constant="16" id="xlR-Yw-z4a">
+                    <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                </constraint>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ed2-gC-SOj" secondAttribute="trailing" constant="51" id="y9h-Yy-YNB">
+                    <variation key="heightClass=regular-widthClass=regular" constant="102"/>
+                </constraint>
+                <constraint firstItem="XAA-nx-dAm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="z2B-Mf-VB0">
+                    <variation key="heightClass=regular-widthClass=regular" constant="32"/>
+                </constraint>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-2186.9565217391305" y="-207.25446428571428"/>
+        </view>
+    </objects>
+</document>

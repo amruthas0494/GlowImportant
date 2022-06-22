@@ -1,0 +1,123 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0d3-Yw-3tt"; */
+"0d3-Yw-3tt.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1du-n2-adV"; */
+"1du-n2-adV.text" = "Label";
+
+/* Class = "UILabel"; text = "DOB"; ObjectID = "2Ll-Db-X58"; */
+"2Ll-Db-X58.text" = "DOB";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3Bv-6q-gvn"; */
+"3Bv-6q-gvn.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4L4-S1-ylK"; */
+"4L4-S1-ylK.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "84I-l4-OiH"; */
+"84I-l4-OiH.text" = "Label";
+
+/* Class = "UILabel"; text = "aa"; ObjectID = "8Yh-Mk-GkG"; */
+"8Yh-Mk-GkG.text" = "aa";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "C5P-iP-m6Z"; */
+"C5P-iP-m6Z.text" = "Label";
+
+/* Class = "UILabel"; text = "aa"; ObjectID = "Cpp-NX-pZ6"; */
+"Cpp-NX-pZ6.text" = "aa";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "KMl-Ap-zte"; */
+"KMl-Ap-zte.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MNI-ba-cf0"; */
+"MNI-ba-cf0.text" = "Label";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "Mqm-A5-psg"; */
+"Mqm-A5-psg.text" = "First Name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NHJ-u3-QVo"; */
+"NHJ-u3-QVo.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "NfB-HB-xO5"; */
+"NfB-HB-xO5.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "OrE-PL-MuQ"; */
+"OrE-PL-MuQ.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "POi-5X-ZPD"; */
+"POi-5X-ZPD.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "POi-5X-ZPD"; */
+"POi-5X-ZPD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PSr-Vk-1qB"; */
+"PSr-Vk-1qB.text" = "Label";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "SFx-ox-nkV"; */
+"SFx-ox-nkV.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "SFx-ox-nkV"; */
+"SFx-ox-nkV.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SvQ-2M-fEe"; */
+"SvQ-2M-fEe.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Save Changes"; ObjectID = "Td7-D9-HZy"; */
+"Td7-D9-HZy.normalTitle" = "Save Changes";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VEF-HG-fP0"; */
+"VEF-HG-fP0.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VMj-DN-FMf"; */
+"VMj-DN-FMf.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "XR3-ne-nkd"; */
+"XR3-ne-nkd.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XR3-ne-nkd"; */
+"XR3-ne-nkd.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "aa"; ObjectID = "cbx-J5-wsq"; */
+"cbx-J5-wsq.text" = "aa";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ccb-BN-0rr"; */
+"ccb-BN-0rr.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dLt-oX-SSn"; */
+"dLt-oX-SSn.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dkx-be-eOB"; */
+"dkx-be-eOB.text" = "Label";
+
+/* Class = "UILabel"; text = "aa"; ObjectID = "dpE-Nn-ia8"; */
+"dpE-Nn-ia8.text" = "aa";
+
+/* Class = "UILabel"; text = "aa"; ObjectID = "fzC-7n-XSn"; */
+"fzC-7n-XSn.text" = "aa";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "g0f-Ig-W0w"; */
+"g0f-Ig-W0w.text" = "Gender";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "oxl-KY-UqR"; */
+"oxl-KY-UqR.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oxl-KY-UqR"; */
+"oxl-KY-UqR.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Last Name"; ObjectID = "qgi-QA-qcQ"; */
+"qgi-QA-qcQ.text" = "Last Name";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "swb-IT-eSM"; */
+"swb-IT-eSM.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "swb-IT-eSM"; */
+"swb-IT-eSM.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "aa"; ObjectID = "vCo-45-REe"; */
+"vCo-45-REe.text" = "aa";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vnF-0z-Rpd"; */
+"vnF-0z-Rpd.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yb0-Yg-UZT"; */
+"yb0-Yg-UZT.text" = "Label";
