@@ -327,7 +327,7 @@ struct StepResponses: Codable {
     let createdAt: String
     let updatedAt: String
     let deletedAt: String?
-    let stepResponseMessages: [StepResponseMessage]
+    let stepResponseMessages: [StepResponseMessages]?
     let nextStep: nextStep?
     let stepOption: Options
    // let operator : String?
@@ -383,24 +383,24 @@ struct nextStep: Codable {
 
 // MARK: - StepResponseMessage
 struct StepResponseMessage: Codable {
-    let id: String
-    let text: JSONNull?
+    let id: String?
+    let text: String?
     let type: String
-    let position: Int
-    let delay: Int
-    let attachmentUrl: JSONNull?
-    let stepResponseId: String
-    let educationLessonId: JSONNull?
-    let educationLessonUnitId: JSONNull?
-    let educationLessonPageId: JSONNull?
-    let botId: String
-    let botStepId: String
-    let createdAt: String
-    let updatedAt: String
-    let deletedAt: JSONNull?
-    let educationLesson: JSONNull?
-    let educationLessonUnit: JSONNull?
-    let educationLessonPage: JSONNull?
+    let position: Int?
+    let delay: Int?
+    let attachmentUrl: String?
+    let stepResponseId: String?
+    let educationLessonId: String?
+    let educationLessonUnitId: String?
+    let educationLessonPageId: String?
+    let botId: String?
+    let botStepId: String?
+    let createdAt: String?
+    let updatedAt: String?
+    let deletedAt: String?
+    let educationLesson: BotEducationLesson?
+    let educationLessonUnit: Unit?
+    let educationLessonPage: EducationLessonPage?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -454,17 +454,17 @@ struct PrevStep: Codable {
     let id: String?
     let isDefault: Bool?
     let exitAfter: Bool?
-    let prevStepOperator: JSONNull?
-    let compareText: JSONNull?
-    let compareDate: JSONNull?
-    let compareNumber: JSONNull?
-    let botStepID: String?
-    let nextStepID: JSONNull?
-    let stepOptionID: String?
+    let prevStepOperator: String?
+    let compareText: String?
+    let compareDate: String?
+    let compareNumber: String?
+    let botStepId: String?
+    let nextStepId: String?
+    let stepOptionId: String?
     let createdAt: String?
     let updatedAt: String?
-    let deletedAt: JSONNull?
-    let stepResponseMessages: [StepResponseMessage]
+    let deletedAt: String?
+    let stepResponseMessages: [StepResponseMessage]?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -474,9 +474,9 @@ struct PrevStep: Codable {
         case compareText
         case compareDate
         case compareNumber
-        case botStepID
-        case nextStepID
-        case stepOptionID
+        case botStepId
+        case nextStepId
+        case stepOptionId
         case createdAt
         case updatedAt
         case deletedAt
@@ -489,3 +489,4 @@ struct PrevStep: Codable {
 struct PreviousFAQStepResponse: Codable {
     var prevSteps: [CurrentStep]?
 }
+

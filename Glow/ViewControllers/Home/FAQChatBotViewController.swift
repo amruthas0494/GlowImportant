@@ -408,7 +408,7 @@ class FAQChatBotViewController: UIViewController {
                           if isSuccess {
                               self.removeLastStepOption()
                               if let prevStep = previewData?.prevStep, prevStep != nil {
-                                      for response in prevStep.stepResponseMessages {
+                                      for response in prevStep.stepResponseMessages ?? [] {
                                           self.botStepId = response.botStepId
                                           self.chatBotViewModel.stepId = self.botStepId
                                         //  self.loadPreviousChatbotStep(objPreviousSteps: chatbotsteps)

@@ -173,12 +173,12 @@ extension OnboardingChatbotViewController {
                             UserDefaults.onboardToken = token
                         }
                         self.removeOptions()
-                        //if displayData != ""  {
-                            if let displayData = displayData {
-                                self.arrChatContent.append((displayData, ChatbotCell.rightTextView, nil, Date().toString(format: "h:mm a"), OnboardingStep.themeSelect))
-                            }
-                            
-                       // }
+                        if displayData != ""  {
+                        if let displayData = displayData {
+                            self.arrChatContent.append((displayData, ChatbotCell.rightTextView, nil, Date().toString(format: "h:mm a"), OnboardingStep.themeSelect))
+                        }
+                        
+                         }
                         self.reloadAndScrollToBottom()
                         if object.next ?? false {
                             self.onboardingViewModel.loadNextStep(object: object)
@@ -217,6 +217,35 @@ extension OnboardingChatbotViewController {
                     // self.alertMessage(title: error ?? "Oops!Something went wrong")
                 }
             }
+        }
+    }
+    private func staticSteps(step:String?) {
+        onboardingViewModel.data = [:]
+        self.onboardingViewModel.onboardingProgressstatic(step: step) { isSuccess, error, onboardingProgress in
+            ProgressHUD.dismiss()
+            DispatchQueue.main.async {
+                if isSuccess {
+                    if let object = onboardingProgress, object.success ?? false {
+                        
+                        
+                        self.reloadAndScrollToBottom()
+                        if object.next ?? false {
+                            self.onboardingViewModel.loadNextStep(object: object)
+                        } else {
+                            // move to mascot screen
+                            if let initialViewController = self.storyboard?.instantiateViewController(withIdentifier: MascotPersonViewController.identifier) as? MascotPersonViewController {
+                                initialViewController.mascotFor = .ThankYou
+                                self.navigationController?.pushViewController(initialViewController, animated: true)
+                            }
+                            
+                        }
+                    }
+                } else {
+                    self.showErrorToast(error)
+                    // self.alertMessage(title: error ?? "Oops!Something went wrong")
+                }
+            }
+            
         }
     }
 }
@@ -490,51 +519,52 @@ extension OnboardingChatbotViewController: UITableViewDelegate, UITableViewDataS
             cell.selectionStyle = .none
             cell.lblText.text = object.text
             cell.lblTime.text = object.time
-          
+            //self.onboardingViewModel.currentStep = .typeOneDiabetesSelect
+            self.staticSteps(step: "typeOneDiabetesSelect")
             return cell
             
-            self.postOnboardingProgress(data: [:], displayData: "")
-        
-    case .inputPatientName:
-        switch object.type {
-        case .textView:
-            let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-            cell.selectionStyle = .none
-            cell.lblText.text = object.text
-            cell.lblTime.text = object.time
-            return cell
-        case .calledName:
-            let cell = tableView.dequeueReusableCell(withClass: EmailVerifyCell.self)
-            cell.tag = 1
-            cell.selectionStyle = .none
-            cell.lblEmail.text = ""
-            cell.txtEmail.text = ""
-            cell.btnSubmit.tag = indexPath.row
-            cell.btnSubmit.addTarget(self, action: #selector(onFullNameSubmit(sender:)), for: .touchUpInside)
-            return cell
-        default:
-            break
-        }
-    case .diabetesDiscoverySelect:
-        switch object.type {
-        case .textView:
-            let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-            cell.selectionStyle = .none
-            cell.lblText.text = object.text
-            cell.lblTime.text = object.time
-            return cell
-        case .diabetesDiscoverySelect :
-            let cell = tableView.dequeueReusableCell(withClass: AgeCell.self)
-            cell.tag = 2
-            cell.selectionStyle = .none
-            cell.lblAge.text = ""
-            cell.txtAge.text = ""
-            cell.btnSubmit.tag = indexPath.row
-            cell.btnSubmit.addTarget(self, action: #selector(ondiabetesDiscoverySelect(sender:)), for: .touchUpInside)
-            return cell
-        default:
-            break
-        }
+            
+            
+        case .inputPatientName:
+            switch object.type {
+            case .textView:
+                let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+                cell.selectionStyle = .none
+                cell.lblText.text = object.text
+                cell.lblTime.text = object.time
+                return cell
+            case .calledName:
+                let cell = tableView.dequeueReusableCell(withClass: EmailVerifyCell.self)
+                cell.tag = 1
+                cell.selectionStyle = .none
+                cell.lblEmail.text = ""
+                cell.txtEmail.text = ""
+                cell.btnSubmit.tag = indexPath.row
+                cell.btnSubmit.addTarget(self, action: #selector(onFullNameSubmit(sender:)), for: .touchUpInside)
+                return cell
+            default:
+                break
+            }
+        case .diabetesDiscoverySelect:
+            switch object.type {
+            case .textView:
+                let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+                cell.selectionStyle = .none
+                cell.lblText.text = object.text
+                cell.lblTime.text = object.time
+                return cell
+            case .diabetesDiscoverySelect :
+                let cell = tableView.dequeueReusableCell(withClass: AgeCell.self)
+                cell.tag = 2
+                cell.selectionStyle = .none
+                cell.lblAge.text = ""
+                cell.txtAge.text = ""
+                cell.btnSubmit.tag = indexPath.row
+                cell.btnSubmit.addTarget(self, action: #selector(ondiabetesDiscoverySelect(sender:)), for: .touchUpInside)
+                return cell
+            default:
+                break
+            }
         case .learningInterestScale:
             switch object.type {
             case .textView:
@@ -544,13 +574,13 @@ extension OnboardingChatbotViewController: UITableViewDelegate, UITableViewDataS
                 cell.lblTime.text = object.time
                 return cell
             case .slider:
-            let cell = tableView.dequeueReusableCell(withClass: SliderCell.self)
-            cell.selectionStyle = .none
-            cell.slider.isContinuous = false
-            cell.action = object.redirectTo
-            cell.slider.tag = indexPath.row
-            cell.slider.addTarget(self, action: #selector(onSliderValueChange(sender:)), for: .valueChanged)
-            return cell
+                let cell = tableView.dequeueReusableCell(withClass: SliderCell.self)
+                cell.selectionStyle = .none
+                cell.slider.isContinuous = false
+                cell.action = object.redirectTo
+                cell.slider.tag = indexPath.row
+                cell.slider.addTarget(self, action: #selector(onSliderValueChange(sender:)), for: .valueChanged)
+                return cell
             default:
                 break
             }
@@ -561,12 +591,13 @@ extension OnboardingChatbotViewController: UITableViewDelegate, UITableViewDataS
                 cell.selectionStyle = .none
                 cell.lblText.text = object.text
                 cell.lblTime.text = object.time
-                self.postOnboardingProgress(data: [:], displayData: "")
+                //self.postOnboardingProgress(data: [:], displayData: "")
+                self.staticSteps(step: "learningInterestScaleLess")
                 return cell
             default:
-               break
+                break
             }
-               
+            
         case .learningInterestScaleMore:
             let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
             cell.selectionStyle = .none
@@ -574,7 +605,7 @@ extension OnboardingChatbotViewController: UITableViewDelegate, UITableViewDataS
             cell.lblTime.text = object.time
             self.postOnboardingProgress(data: [:], displayData: "")
             return cell
-       
+            
         case .improvementChangeSelect:
             switch object.type {
             case .textView:
@@ -606,7 +637,9 @@ extension OnboardingChatbotViewController: UITableViewDelegate, UITableViewDataS
             cell.selectionStyle = .none
             cell.lblText.text = object.text
             cell.lblTime.text = object.time
-            self.postOnboardingProgress(data: [:], displayData: "")
+           
+            self.staticSteps(step: "improvementChangeSelectNull")
+            //self.postOnboardingProgress(data: [:], displayData: "")
             return cell
         case .optNotification:
             switch object.type {
@@ -665,21 +698,24 @@ extension OnboardingChatbotViewController: UITableViewDelegate, UITableViewDataS
             cell.selectionStyle = .none
             cell.lblText.text = object.text
             cell.lblTime.text = object.time
-            self.postOnboardingProgress(data: [:], displayData: "")
+            self.staticSteps(step: "optNotificationNo")
+            //self.postOnboardingProgress(data: [:], displayData: "")
             return cell
         case .optNotificationSlotSetUp:
             let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
             cell.selectionStyle = .none
             cell.lblText.text = object.text
             cell.lblTime.text = object.time
-            self.postOnboardingProgress(data: [:], displayData: "")
+            self.staticSteps(step: "optNotificationSlotSetUp")
+           // self.postOnboardingProgress(data: [:], displayData: "")
             return cell
         case .personalizeContent:
-            let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+            let cell = tableView.dequeueReusableCell(withClass: typeOneTableViewCell.self)
             cell.selectionStyle = .none
             cell.lblText.text = object.text
             cell.lblTime.text = object.time
-            self.postOnboardingProgress(data: [:], displayData: "")
+            self.staticSteps(step: "personalizeContent")
+           // self.postOnboardingProgress(data: [:], displayData: "")
             return cell
         case .personalizeContentSetup:
             switch object.type {
@@ -688,10 +724,11 @@ extension OnboardingChatbotViewController: UITableViewDelegate, UITableViewDataS
                 cell.selectionStyle = .none
                 cell.lblText.text = object.text
                 cell.lblTime.text = object.time
-                self.postOnboardingProgress(data: [:], displayData: "")
+                self.staticSteps(step: "personalizeContentSetup")
+               // self.postOnboardingProgress(data: [:], displayData: "")
                 return cell
             default:
-               break
+                break
             }
         case .letsBegin:
             switch object.type {
@@ -700,7 +737,8 @@ extension OnboardingChatbotViewController: UITableViewDelegate, UITableViewDataS
                 cell.selectionStyle = .none
                 cell.lblText.text = object.text
                 cell.lblTime.text = object.time
-                self.postOnboardingProgress(data: [:], displayData: "")
+                self.staticSteps(step: "letsBegin")
+                //self.postOnboardingProgress(data: [:], displayData: "")
                 return cell
             case .button:
                 let cell = tableView.dequeueReusableCell(withClass: RightButtonCell.self)
@@ -711,325 +749,325 @@ extension OnboardingChatbotViewController: UITableViewDelegate, UITableViewDataS
                 cell.btnOption.addTarget(self, action: #selector(onButtonTap(sender:)), for: .touchUpInside)
                 return cell
             default:
-               break
+                break
             }
-    default:
-        break;
-        
+        default:
+            break;
+            
+        }
+        /* switch object.type {
+         case .typing:
+         let cell = tableView.dequeueReusableCell(withClass: TypingCell.self)
+         cell.selectionStyle = .none
+         cell.startAnimation()
+         return cell
+         case .letsBegin:
+         let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+         cell.selectionStyle = .none
+         
+         let object = self.arrChatContent[indexPath.row]
+         if object.text.contains("Now, let me show you around") {
+         //self.onboardingViewModel.currentStep = .letsBegin
+         //  self.postOnboardingProgress(data: [:], displayData: "")
+         cell.lblText.text = object.text
+         }
+         
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         return cell
+         case .textView:
+         let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+         cell.selectionStyle = .none
+         
+         let object = self.arrChatContent[indexPath.row]
+         if object.text.lowercased().contains("hello david this font") {
+         let fontSize: CGFloat = CGFloat(UserDefaults.prefFontSize)
+         cell.lblText.text = object.text + " \(UserDefaults.prefFontSize)"
+         cell.changeFontSize(size: fontSize)
+         }
+         
+         /* if self.onboardingViewModel.currentStep == .typeOneDiabetesSelect &&  object.text == "Just so you know, I am only designed to assist people with type 2 diabetes. The advice presented will not be applicable to people with type 1 diabetes. Please keep this in mind if you decide to continue using this app." {
+          self.postOnboardingProgress(data: [:], displayData: "")
+          cell.lblText.text = object.text
+          cell.lblTime.text = object.time
+          }
+          if object.text.contains("Perhaps you could talk to your doctor about diabetes distress next time you see him") {
+          self.postOnboardingProgress(data: [:], displayData: "")
+          cell.lblText.text = object.text
+          cell.lblTime.text = object.time
+          }*/
+         else {
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         }
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         
+         
+         return cell
+         case .optNotificationSlotSetUp:
+         let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+         cell.selectionStyle = .none
+         let object = self.arrChatContent[indexPath.row]
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         
+         if object.text.contains("Ok, I'll send you notifications at your chosen time of day.") {
+         
+         self.onboardingViewModel.currentStep = .personalizeContent
+         self.postOnboardingProgress(data: [:], displayData: "")
+         
+         }
+         
+         case .personalizeContent:
+         let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+         cell.selectionStyle = .none
+         let object = self.arrChatContent[indexPath.row]
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         if object.text.contains("Give me a moment while I personalize your content...") {
+         // cell.lblText.text = object.text
+         self.onboardingViewModel.currentStep = .personalizeContentSetup
+         self.postOnboardingProgress(data: [:], displayData: "")
+         
+         }
+         
+         
+         case .optNotificationNo:
+         let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+         cell.selectionStyle = .none
+         let object = self.arrChatContent[indexPath.row]
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         if object.text.contains("I get it. Just so you know, the app might not be as helpful as designed without notifications.") {
+         
+         self.onboardingViewModel.currentStep = .personalizeContent
+         self.postOnboardingProgress(data: [:], displayData: "")
+         //  cell.lblText.text = object.text
+         
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         }
+         
+         //        case .typeOneDiabetesSelect:
+         //            let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+         //            cell.selectionStyle = .none
+         //            let object = self.arrChatContent[indexPath.row]
+         //
+         //            cell.lblText.text = object.text
+         //            cell.lblTime.text = object.time
+         //            self.onboardingViewModel.currentStep = .typeOneDiabetesSelect
+         //            self.postOnboardingProgress(data: [:], displayData: "")
+         ////            if object.text.contains("Just so you know, I am only designed to assist people with type 2 diabetes. The advice presented will not be applicable to people with type 1 diabetes. Please keep this in mind if you decide to continue using this app.") {
+         ////                cell.lblText.text = object.text
+         ////                self.onboardingViewModel.currentStep = .typeOneDiabetesSelect
+         ////                self.postOnboardingProgress(data: [:], displayData: "")
+         ////                //cell.lblText.text = object.text
+         ////            }
+         
+         
+         
+         case .learningInterestScaleLess :
+         let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+         cell.selectionStyle = .none
+         let object = self.arrChatContent[indexPath.row]
+         
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         if object.text.contains("Perhaps you could talk to your doctor about diabetes distress next time you see him") {
+         
+         self.onboardingViewModel.currentStep = .improvementChangeSelect
+         self.postOnboardingProgress(data: [:], displayData: "")
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         
+         }
+         return cell
+         
+         case .learningInterestScaleMore :
+         let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+         cell.selectionStyle = .none
+         let object = self.arrChatContent[indexPath.row]
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         self.onboardingViewModel.currentStep = .improvementChangeSelect
+         self.postOnboardingProgress(data: [:], displayData: "")
+         return cell
+         
+         case .personalizeContentSetup :
+         
+         let object = self.arrChatContent[indexPath.row]
+         if object.text.contains("Personalization complete") {
+         let cell = tableView.dequeueReusableCell(withClass: LeftImageWithTextCell.self)
+         cell.selectionStyle = .none
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         
+         self.onboardingViewModel.currentStep = .letsBegin
+         self.postOnboardingProgress(data: [:], displayData: "")
+         
+         return cell
+         }
+         if object.text.contains("Now, let me show you around") {
+         let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
+         cell.selectionStyle = .none
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         return cell
+         }
+         
+         
+         case .rightTextView:
+         let cell = tableView.dequeueReusableCell(withClass: RightTextViewCell.self)
+         cell.selectionStyle = .none
+         let object = self.arrChatContent[indexPath.row]
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         return cell
+         
+         case .button:
+         let cell = tableView.dequeueReusableCell(withClass: RightButtonCell.self)
+         cell.selectionStyle = .none
+         let object = self.arrChatContent[indexPath.row]
+         cell.lblTitle.text = object.text
+         cell.action = object.redirectTo ?? onboardingViewModel.currentStep.rawValue
+         cell.btnOption.addTarget(self, action: #selector(onButtonTap(sender:)), for: .touchUpInside)
+         return cell
+         case .studyNumber:
+         let cell = tableView.dequeueReusableCell(withClass: StudyNumberTableViewCell.self)
+         // cell.tag = 0
+         cell.selectionStyle = .none
+         //  cell.lblAge.text = "Study Number"
+         cell.studyNumberTextField.text = ""
+         // cell.btnSubmit.tag = indexPath.row
+         cell.submitButton.addTarget(self, action: #selector(onStudyNumberSubmit(sender:)), for: .touchUpInside)
+         return cell
+         
+         case .signUpForm:
+         let cell = tableView.dequeueReusableCell(withClass: CreateAccountCell.self)
+         cell.selectionStyle = .none
+         cell.btnSubmit.addTarget(self, action: #selector(onCreateAccountSubmit(sender:)), for: .touchUpInside)
+         return cell
+         case .imageWithText:
+         let cell = tableView.dequeueReusableCell(withClass: LeftImageWithTextCell.self)
+         cell.selectionStyle = .none
+         let object = self.arrChatContent[indexPath.row]
+         cell.lblText.text = object.text
+         cell.lblTime.text = object.time
+         return cell
+         case .mobileVerify:
+         let cell = tableView.dequeueReusableCell(withClass: MobileVerifyCell.self)
+         cell.selectionStyle = .none
+         cell.btnSubmit.tag = indexPath.row
+         cell.btnSubmit.addTarget(self, action: #selector(onMobileVerifySubmit(sender:)), for: .touchUpInside)
+         return cell
+         case .otpVerify:
+         let cell = tableView.dequeueReusableCell(withClass: OTPVerifyCell.self)
+         cell.selectionStyle = .none
+         cell.btnSubmit.tag = indexPath.row
+         cell.btnSubmit.addTarget(self, action: #selector(onOTPVerifySubmit(sender:)), for: .touchUpInside)
+         cell.btnResendOTP.tag = indexPath.row
+         cell.btnResendOTP.addTarget(self, action: #selector(onBtnResentTap(sender:)), for: .touchUpInside)
+         return cell
+         case .fullName:
+         let cell = tableView.dequeueReusableCell(withClass: EmailVerifyCell.self)
+         cell.tag = 0
+         cell.selectionStyle = .none
+         cell.lblEmail.text = "Full Name"
+         cell.txtEmail.text = ""
+         cell.btnSubmit.tag = indexPath.row
+         cell.btnSubmit.addTarget(self, action: #selector(onFullNameSubmit(sender:)), for: .touchUpInside)
+         return cell
+         case .calledName:
+         let cell = tableView.dequeueReusableCell(withClass: EmailVerifyCell.self)
+         cell.tag = 1
+         cell.selectionStyle = .none
+         cell.lblEmail.text = ""
+         cell.txtEmail.text = ""
+         cell.btnSubmit.tag = indexPath.row
+         cell.btnSubmit.addTarget(self, action: #selector(onFullNameSubmit(sender:)), for: .touchUpInside)
+         return cell
+         case .inputDOB:
+         let cell = tableView.dequeueReusableCell(withClass: AgeCell.self)
+         cell.tag = 1
+         cell.lblAge.text = ""
+         cell.txtAge.text = ""
+         cell.selectionStyle = .none
+         cell.btnSubmit.tag = indexPath.row
+         cell.btnSubmit.addTarget(self, action: #selector(onAgeSubmit(sender:)), for: .touchUpInside)
+         return cell
+         case .genderSelection:
+         let cell = tableView.dequeueReusableCell(withClass: genderSelectCell.self)
+         //            var gender = ["Male", "Female", "Others"]
+         //            cell.selectionStyle = .none
+         //            cell.lblTitle.text = gender[indexPath.row]
+         //
+         // cell.btnOption.addTarget(self, action: #selector(onBtnGenderSelection(sender:)), for: .touchUpInside)
+         cell.maleButton.tag = 1
+         cell.maleButton.addTarget(self, action: #selector(onBtnGenderSelection(sender:)), for: .touchUpInside)
+         cell.femaleButton.tag = 2
+         cell.femaleButton.addTarget(self, action: #selector(onBtnGenderSelection(sender:)), for: .touchUpInside)
+         cell.othersButton.tag = 3
+         cell.othersButton.addTarget(self, action: #selector(onBtnGenderSelection(sender:)), for: .touchUpInside)
+         return cell
+         case .diabetesDiscoverySelect :
+         let cell = tableView.dequeueReusableCell(withClass: AgeCell.self)
+         cell.tag = 2
+         cell.selectionStyle = .none
+         cell.lblAge.text = ""
+         cell.txtAge.text = ""
+         cell.btnSubmit.tag = indexPath.row
+         cell.btnSubmit.addTarget(self, action: #selector(ondiabetesDiscoverySelect(sender:)), for: .touchUpInside)
+         return cell
+         case .datePicker:
+         let cell = tableView.dequeueReusableCell(withClass: DatePickerCell.self)
+         cell.selectionStyle = .none
+         cell.btnSubmit.tag = indexPath.row
+         cell.btnSubmit.addTarget(self, action: #selector(onBirthDateSelection(sender:)), for: .touchUpInside)
+         return cell
+         case .slider:
+         let cell = tableView.dequeueReusableCell(withClass: SliderCell.self)
+         cell.selectionStyle = .none
+         cell.slider.isContinuous = false
+         cell.action = object.redirectTo
+         cell.slider.tag = indexPath.row
+         cell.slider.addTarget(self, action: #selector(onSliderValueChange(sender:)), for: .valueChanged)
+         return cell
+         
+         case .personalProgram:
+         break
+         case .login:
+         let cell = tableView.dequeueReusableCell(withClass: LoginCell.self)
+         cell.selectionStyle = .none
+         cell.btnForgotPassword.addTarget(self, action: #selector(onForgotPasswordTap(sender:)), for: .touchUpInside)
+         cell.btnLoginToAccount.addTarget(self, action: #selector(onLoginTap(sender:)), for: .touchUpInside)
+         return cell
+         case .forgotPassword:
+         let cell = tableView.dequeueReusableCell(withClass: ForgotPasswordCell.self)
+         cell.selectionStyle = .none
+         cell.btnResetLink.addTarget(self, action: #selector(onPasswordResetTap(sender:)), for: UIControl.Event.touchUpInside)
+         return cell
+         case .readingFontSize:
+         let cell = tableView.dequeueReusableCell(withClass: ReadingFontSizeCell.self)
+         cell.selectionStyle = .none
+         cell.btnFont14.tag = 14
+         cell.btnFont14.addTarget(self, action: #selector(onReadingFontSizeSelection(sender:)), for: .touchUpInside)
+         cell.btnFont16.tag = 16
+         cell.btnFont16.addTarget(self, action: #selector(onReadingFontSizeSelection(sender:)), for: .touchUpInside)
+         cell.btnFont18.tag = 18
+         cell.btnFont18.addTarget(self, action: #selector(onReadingFontSizeSelection(sender:)), for: .touchUpInside)
+         cell.btnFont20.tag = 20
+         cell.btnFont20.addTarget(self, action: #selector(onReadingFontSizeSelection(sender:)), for: .touchUpInside)
+         return cell
+         case .none:
+         return UITableViewCell()
+         
+         }*/
+        return UITableViewCell()
     }
-    /* switch object.type {
-     case .typing:
-     let cell = tableView.dequeueReusableCell(withClass: TypingCell.self)
-     cell.selectionStyle = .none
-     cell.startAnimation()
-     return cell
-     case .letsBegin:
-     let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-     cell.selectionStyle = .none
-     
-     let object = self.arrChatContent[indexPath.row]
-     if object.text.contains("Now, let me show you around") {
-     //self.onboardingViewModel.currentStep = .letsBegin
-     //  self.postOnboardingProgress(data: [:], displayData: "")
-     cell.lblText.text = object.text
-     }
-     
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     return cell
-     case .textView:
-     let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-     cell.selectionStyle = .none
-     
-     let object = self.arrChatContent[indexPath.row]
-     if object.text.lowercased().contains("hello david this font") {
-     let fontSize: CGFloat = CGFloat(UserDefaults.prefFontSize)
-     cell.lblText.text = object.text + " \(UserDefaults.prefFontSize)"
-     cell.changeFontSize(size: fontSize)
-     }
-     
-     /* if self.onboardingViewModel.currentStep == .typeOneDiabetesSelect &&  object.text == "Just so you know, I am only designed to assist people with type 2 diabetes. The advice presented will not be applicable to people with type 1 diabetes. Please keep this in mind if you decide to continue using this app." {
-      self.postOnboardingProgress(data: [:], displayData: "")
-      cell.lblText.text = object.text
-      cell.lblTime.text = object.time
-      }
-      if object.text.contains("Perhaps you could talk to your doctor about diabetes distress next time you see him") {
-      self.postOnboardingProgress(data: [:], displayData: "")
-      cell.lblText.text = object.text
-      cell.lblTime.text = object.time
-      }*/
-     else {
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     }
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     
-     
-     return cell
-     case .optNotificationSlotSetUp:
-     let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-     cell.selectionStyle = .none
-     let object = self.arrChatContent[indexPath.row]
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     
-     if object.text.contains("Ok, I'll send you notifications at your chosen time of day.") {
-     
-     self.onboardingViewModel.currentStep = .personalizeContent
-     self.postOnboardingProgress(data: [:], displayData: "")
-     
-     }
-     
-     case .personalizeContent:
-     let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-     cell.selectionStyle = .none
-     let object = self.arrChatContent[indexPath.row]
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     if object.text.contains("Give me a moment while I personalize your content...") {
-     // cell.lblText.text = object.text
-     self.onboardingViewModel.currentStep = .personalizeContentSetup
-     self.postOnboardingProgress(data: [:], displayData: "")
-     
-     }
-     
-     
-     case .optNotificationNo:
-     let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-     cell.selectionStyle = .none
-     let object = self.arrChatContent[indexPath.row]
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     if object.text.contains("I get it. Just so you know, the app might not be as helpful as designed without notifications.") {
-     
-     self.onboardingViewModel.currentStep = .personalizeContent
-     self.postOnboardingProgress(data: [:], displayData: "")
-     //  cell.lblText.text = object.text
-     
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     }
-     
-     //        case .typeOneDiabetesSelect:
-     //            let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-     //            cell.selectionStyle = .none
-     //            let object = self.arrChatContent[indexPath.row]
-     //
-     //            cell.lblText.text = object.text
-     //            cell.lblTime.text = object.time
-     //            self.onboardingViewModel.currentStep = .typeOneDiabetesSelect
-     //            self.postOnboardingProgress(data: [:], displayData: "")
-     ////            if object.text.contains("Just so you know, I am only designed to assist people with type 2 diabetes. The advice presented will not be applicable to people with type 1 diabetes. Please keep this in mind if you decide to continue using this app.") {
-     ////                cell.lblText.text = object.text
-     ////                self.onboardingViewModel.currentStep = .typeOneDiabetesSelect
-     ////                self.postOnboardingProgress(data: [:], displayData: "")
-     ////                //cell.lblText.text = object.text
-     ////            }
-     
-     
-     
-     case .learningInterestScaleLess :
-     let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-     cell.selectionStyle = .none
-     let object = self.arrChatContent[indexPath.row]
-     
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     if object.text.contains("Perhaps you could talk to your doctor about diabetes distress next time you see him") {
-     
-     self.onboardingViewModel.currentStep = .improvementChangeSelect
-     self.postOnboardingProgress(data: [:], displayData: "")
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     
-     }
-     return cell
-     
-     case .learningInterestScaleMore :
-     let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-     cell.selectionStyle = .none
-     let object = self.arrChatContent[indexPath.row]
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     self.onboardingViewModel.currentStep = .improvementChangeSelect
-     self.postOnboardingProgress(data: [:], displayData: "")
-     return cell
-     
-     case .personalizeContentSetup :
-     
-     let object = self.arrChatContent[indexPath.row]
-     if object.text.contains("Personalization complete") {
-     let cell = tableView.dequeueReusableCell(withClass: LeftImageWithTextCell.self)
-     cell.selectionStyle = .none
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     
-     self.onboardingViewModel.currentStep = .letsBegin
-     self.postOnboardingProgress(data: [:], displayData: "")
-     
-     return cell
-     }
-     if object.text.contains("Now, let me show you around") {
-     let cell = tableView.dequeueReusableCell(withClass: LeftTextViewCell.self)
-     cell.selectionStyle = .none
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     return cell
-     }
-     
-     
-     case .rightTextView:
-     let cell = tableView.dequeueReusableCell(withClass: RightTextViewCell.self)
-     cell.selectionStyle = .none
-     let object = self.arrChatContent[indexPath.row]
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     return cell
-     
-     case .button:
-     let cell = tableView.dequeueReusableCell(withClass: RightButtonCell.self)
-     cell.selectionStyle = .none
-     let object = self.arrChatContent[indexPath.row]
-     cell.lblTitle.text = object.text
-     cell.action = object.redirectTo ?? onboardingViewModel.currentStep.rawValue
-     cell.btnOption.addTarget(self, action: #selector(onButtonTap(sender:)), for: .touchUpInside)
-     return cell
-     case .studyNumber:
-     let cell = tableView.dequeueReusableCell(withClass: StudyNumberTableViewCell.self)
-     // cell.tag = 0
-     cell.selectionStyle = .none
-     //  cell.lblAge.text = "Study Number"
-     cell.studyNumberTextField.text = ""
-     // cell.btnSubmit.tag = indexPath.row
-     cell.submitButton.addTarget(self, action: #selector(onStudyNumberSubmit(sender:)), for: .touchUpInside)
-     return cell
-     
-     case .signUpForm:
-     let cell = tableView.dequeueReusableCell(withClass: CreateAccountCell.self)
-     cell.selectionStyle = .none
-     cell.btnSubmit.addTarget(self, action: #selector(onCreateAccountSubmit(sender:)), for: .touchUpInside)
-     return cell
-     case .imageWithText:
-     let cell = tableView.dequeueReusableCell(withClass: LeftImageWithTextCell.self)
-     cell.selectionStyle = .none
-     let object = self.arrChatContent[indexPath.row]
-     cell.lblText.text = object.text
-     cell.lblTime.text = object.time
-     return cell
-     case .mobileVerify:
-     let cell = tableView.dequeueReusableCell(withClass: MobileVerifyCell.self)
-     cell.selectionStyle = .none
-     cell.btnSubmit.tag = indexPath.row
-     cell.btnSubmit.addTarget(self, action: #selector(onMobileVerifySubmit(sender:)), for: .touchUpInside)
-     return cell
-     case .otpVerify:
-     let cell = tableView.dequeueReusableCell(withClass: OTPVerifyCell.self)
-     cell.selectionStyle = .none
-     cell.btnSubmit.tag = indexPath.row
-     cell.btnSubmit.addTarget(self, action: #selector(onOTPVerifySubmit(sender:)), for: .touchUpInside)
-     cell.btnResendOTP.tag = indexPath.row
-     cell.btnResendOTP.addTarget(self, action: #selector(onBtnResentTap(sender:)), for: .touchUpInside)
-     return cell
-     case .fullName:
-     let cell = tableView.dequeueReusableCell(withClass: EmailVerifyCell.self)
-     cell.tag = 0
-     cell.selectionStyle = .none
-     cell.lblEmail.text = "Full Name"
-     cell.txtEmail.text = ""
-     cell.btnSubmit.tag = indexPath.row
-     cell.btnSubmit.addTarget(self, action: #selector(onFullNameSubmit(sender:)), for: .touchUpInside)
-     return cell
-     case .calledName:
-     let cell = tableView.dequeueReusableCell(withClass: EmailVerifyCell.self)
-     cell.tag = 1
-     cell.selectionStyle = .none
-     cell.lblEmail.text = ""
-     cell.txtEmail.text = ""
-     cell.btnSubmit.tag = indexPath.row
-     cell.btnSubmit.addTarget(self, action: #selector(onFullNameSubmit(sender:)), for: .touchUpInside)
-     return cell
-     case .inputDOB:
-     let cell = tableView.dequeueReusableCell(withClass: AgeCell.self)
-     cell.tag = 1
-     cell.lblAge.text = ""
-     cell.txtAge.text = ""
-     cell.selectionStyle = .none
-     cell.btnSubmit.tag = indexPath.row
-     cell.btnSubmit.addTarget(self, action: #selector(onAgeSubmit(sender:)), for: .touchUpInside)
-     return cell
-     case .genderSelection:
-     let cell = tableView.dequeueReusableCell(withClass: genderSelectCell.self)
-     //            var gender = ["Male", "Female", "Others"]
-     //            cell.selectionStyle = .none
-     //            cell.lblTitle.text = gender[indexPath.row]
-     //
-     // cell.btnOption.addTarget(self, action: #selector(onBtnGenderSelection(sender:)), for: .touchUpInside)
-     cell.maleButton.tag = 1
-     cell.maleButton.addTarget(self, action: #selector(onBtnGenderSelection(sender:)), for: .touchUpInside)
-     cell.femaleButton.tag = 2
-     cell.femaleButton.addTarget(self, action: #selector(onBtnGenderSelection(sender:)), for: .touchUpInside)
-     cell.othersButton.tag = 3
-     cell.othersButton.addTarget(self, action: #selector(onBtnGenderSelection(sender:)), for: .touchUpInside)
-     return cell
-     case .diabetesDiscoverySelect :
-     let cell = tableView.dequeueReusableCell(withClass: AgeCell.self)
-     cell.tag = 2
-     cell.selectionStyle = .none
-     cell.lblAge.text = ""
-     cell.txtAge.text = ""
-     cell.btnSubmit.tag = indexPath.row
-     cell.btnSubmit.addTarget(self, action: #selector(ondiabetesDiscoverySelect(sender:)), for: .touchUpInside)
-     return cell
-     case .datePicker:
-     let cell = tableView.dequeueReusableCell(withClass: DatePickerCell.self)
-     cell.selectionStyle = .none
-     cell.btnSubmit.tag = indexPath.row
-     cell.btnSubmit.addTarget(self, action: #selector(onBirthDateSelection(sender:)), for: .touchUpInside)
-     return cell
-     case .slider:
-     let cell = tableView.dequeueReusableCell(withClass: SliderCell.self)
-     cell.selectionStyle = .none
-     cell.slider.isContinuous = false
-     cell.action = object.redirectTo
-     cell.slider.tag = indexPath.row
-     cell.slider.addTarget(self, action: #selector(onSliderValueChange(sender:)), for: .valueChanged)
-     return cell
-     
-     case .personalProgram:
-     break
-     case .login:
-     let cell = tableView.dequeueReusableCell(withClass: LoginCell.self)
-     cell.selectionStyle = .none
-     cell.btnForgotPassword.addTarget(self, action: #selector(onForgotPasswordTap(sender:)), for: .touchUpInside)
-     cell.btnLoginToAccount.addTarget(self, action: #selector(onLoginTap(sender:)), for: .touchUpInside)
-     return cell
-     case .forgotPassword:
-     let cell = tableView.dequeueReusableCell(withClass: ForgotPasswordCell.self)
-     cell.selectionStyle = .none
-     cell.btnResetLink.addTarget(self, action: #selector(onPasswordResetTap(sender:)), for: UIControl.Event.touchUpInside)
-     return cell
-     case .readingFontSize:
-     let cell = tableView.dequeueReusableCell(withClass: ReadingFontSizeCell.self)
-     cell.selectionStyle = .none
-     cell.btnFont14.tag = 14
-     cell.btnFont14.addTarget(self, action: #selector(onReadingFontSizeSelection(sender:)), for: .touchUpInside)
-     cell.btnFont16.tag = 16
-     cell.btnFont16.addTarget(self, action: #selector(onReadingFontSizeSelection(sender:)), for: .touchUpInside)
-     cell.btnFont18.tag = 18
-     cell.btnFont18.addTarget(self, action: #selector(onReadingFontSizeSelection(sender:)), for: .touchUpInside)
-     cell.btnFont20.tag = 20
-     cell.btnFont20.addTarget(self, action: #selector(onReadingFontSizeSelection(sender:)), for: .touchUpInside)
-     return cell
-     case .none:
-     return UITableViewCell()
-     
-     }*/
-    return UITableViewCell()
-}
-func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.dismiss(animated: true)
-}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.dismiss(animated: true)
+    }
 }
 
 // MARK: - OnboardingChatbotDelegate
@@ -1520,3 +1558,4 @@ extension OnboardingChatbotViewController {
         self.postOnboardingProgress(data: ["value":"\(size)"], displayData: fontSize)
     }
 }
+

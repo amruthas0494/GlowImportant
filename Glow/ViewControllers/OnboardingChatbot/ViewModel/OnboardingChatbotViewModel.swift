@@ -89,6 +89,31 @@ class OnboardingChatbotViewModel {
         }
     }
     
+    func onboardingProgressstatic(step:String?, completion: @escaping (Bool, String?, Onboarding?) -> ()) {
+        
+        guard let step = step else {
+            return
+        }
+        guard let data = data else {
+            return
+        }
+      
+        let token: String? = UserDefaults.onboardToken ?? nil
+        SessionManager.default.requestModel(request: Router.onboardingProgress(token: token, step: step, data: data).urlRequest()) { (response: Onboarding?, error: GlowError?) in
+            if error != nil {
+                switch error {
+                case .network(let err)?, .parser(let err)?, .custom(let err)? :
+                    completion(false, err, nil)
+                case .none:
+                    completion(false, DEFAULT_API_ERROR(), nil)
+                }
+            } else {
+                self.onBoardingList = response
+                completion(true, nil, response)
+            }
+        }
+    }
+    
     func loadNextStep(object: Onboarding) {
         
         var messages = [chatContent]()
@@ -168,3 +193,4 @@ extension OnboardingChatbotViewModel {
         }
     }
 }
+
